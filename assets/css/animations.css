@@ -1,0 +1,332 @@
+/* ==========================================================================
+   Animations & Interactive Effects
+   ========================================================================== */
+
+/* --- Scroll Reveal --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 0.16s; }
+.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 0.24s; }
+.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 0.32s; }
+.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.40s; }
+.reveal-stagger.revealed > *:nth-child(7) { transition-delay: 0.48s; }
+
+/* --- Button Shine Effect --- */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle 80px at var(--shine-x, -100px) var(--shine-y, -100px),
+        rgba(255, 255, 255, 0.35) 0%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-shine:hover::before {
+    opacity: 1;
+}
+
+/* Dark button shine (for white buttons on dark bg) */
+.btn-shine-dark {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle 80px at var(--shine-x, -100px) var(--shine-y, -100px),
+        rgba(0, 0, 0, 0.08) 0%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-shine-dark:hover::before {
+    opacity: 1;
+}
+
+/* --- Card Tilt --- */
+.card-tilt {
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.card-tilt:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* --- Magnetic Button --- */
+.btn-magnetic {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+/* --- Trust Badge Hover --- */
+.trust-badge {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+}
+
+.trust-badge:hover {
+    transform: translateY(-4px);
+}
+
+.trust-badge .badge-icon {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trust-badge:hover .badge-icon {
+    transform: scale(1.2);
+}
+
+/* --- Stats Counter Pulse --- */
+.stat-number {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat:hover .stat-number {
+    transform: scale(1.08);
+}
+
+/* --- Hero Title Letter Animation --- */
+.hero h1,
+.page-hero h1 {
+    overflow: hidden;
+    padding: 0.15em 0;
+}
+
+/* Disable letter animation on blog pages */
+.page-hero--wide h1 {
+    overflow: visible;
+}
+
+.page-hero--wide h1 .letter {
+    opacity: 1;
+    transform: none;
+    animation: none;
+}
+
+.hero h1 .letter,
+.page-hero h1 .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: letterReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes letterReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Why Point Hover --- */
+.why-point {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+}
+
+.why-point:hover {
+    transform: translateY(-3px);
+}
+
+/* --- FAQ Hover Highlight --- */
+.faq-question {
+    transition: padding-left 0.3s ease;
+}
+
+.faq-item:hover .faq-question {
+    padding-left: 6px;
+}
+
+/* --- Spots Badge Pulse --- */
+@keyframes subtlePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.spots-badge {
+    animation: subtlePulse 3s ease-in-out infinite;
+}
+
+/* --- Price Row Highlight --- */
+.price-now {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                letter-spacing 0.3s ease;
+}
+
+.price-row:hover .price-now {
+    transform: scale(1.05);
+}
+
+/* --- Perks List Item Hover --- */
+.perks li {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                padding-left 0.25s ease;
+}
+
+.perks li:hover {
+    padding-left: 6px;
+}
+
+/* --- Card Glow on Mouse Move --- */
+.offer-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle 200px at var(--glow-x, 50%) var(--glow-y, 50%),
+        rgba(255, 255, 255, 0.06) 0%,
+        transparent 100%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.offer-card:hover::after {
+    opacity: 1;
+}
+
+/* --- Why Highlights Card Border Glow --- */
+.why-highlights-inner {
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.why-highlights-inner:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* --- Smooth hover for all links in content --- */
+.footer-contact a {
+    position: relative;
+}
+
+.footer-contact a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.footer-contact a:hover::after {
+    width: 100%;
+}
+
+/* --- Ticker Enhancement --- */
+.ticker-wrap {
+    transition: opacity 0.3s ease;
+}
+
+.ticker-wrap:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+/* --- Card Hover Lift (for grid cards) --- */
+.card-hover-lift {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.card-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Reduce motion for accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .reveal-stagger > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .hero h1 .letter,
+    .page-hero h1 .letter {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+    .spots-badge {
+        animation: none;
+    }
+    .card-tilt,
+    .btn-magnetic,
+    .trust-badge,
+    .why-point,
+    .stat-number,
+    .price-now,
+    .perks li,
+    .card-hover-lift {
+        transition: none;
+    }
+}

@@ -1,0 +1,59 @@
+@media (max-width: 767px) {
+    /* Prevent horizontal scrolling */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Set horizontal padding on main content */
+    #main-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+
+    /* Make images fluid */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Increase tap targets to 44px minimum height */
+    .back-link, .nav-blog-link, .read-more, .logo-link {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .footer-contact a {
+        display: inline-block;
+        padding: 10px 0;
+        min-height: 44px;
+        box-sizing: border-box;
+    }
+
+    /* Fix nav layout for mobile screens */
+    nav {
+        padding: 16px 4%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        height: 48px;
+    }
+
+    nav.scrolled {
+        padding: 8px 4%;
+        flex-direction: row; /* Keep row when scrolled and logo is small */
+        gap: 8px;
+    }
+    
+    /* Stack multi-column layouts that aren't already handled */
+    .options-grid,
+    .perks-bar-inner,
+    .benefits-grid,
+    .timeline-list {
+        display: flex;
+        flex-direction: column;
+    }
+}
