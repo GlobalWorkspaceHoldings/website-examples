@@ -2,7 +2,7 @@
 
 A comprehensive visual reference of modern website components and styling patterns. Organizations can copy and paste components directly from the included HTML file to quickly build professional websites.
 
-**See it in action:** [sgf.work](https://sgf.work)
+**View all components in one place:** [web-design.sgf.co](https://web-design.sgf.co)
 
 ## What's Included
 
