@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGF.work | Visual Reference</title>
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/oii6upi.css?display=swap">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/pages.css">
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+    <script src="/assets/js/components.js" defer></script>
+    <script src="/assets/js/animations.js" defer></script>
+    <style>
+        .mailchimp-container { min-height: 280px; }
+
+        /* ── Subpage nav preview ── */
+        .subnav-preview {
+            max-width: 100%;
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 6%;
+        }
+        .subnav-preview .logo {
+            height: 28px;
+            width: auto;
+        }
+
+        /* ── 404 page elements ── */
+        .error-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px 100px;
+        }
+        .error-code {
+            font-size: clamp(5rem, 18vw, 12rem);
+            line-height: 0.85;
+            margin: 0 0 24px;
+            letter-spacing: -0.04em;
+            font-weight: 900;
+            text-transform: uppercase;
+            opacity: 0.08;
+        }
+        .error-headline {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+        .error-joke {
+            font-family: "area", sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 480px;
+            margin: 0 auto 40px;
+        }
+        .btn-home {
+            display: inline-block;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 18px 36px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-family: "area-normal", sans-serif;
+            font-weight: 900;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+        .btn-home:hover {
+            background: rgba(0,0,0,0.8);
+            transform: translateY(-2px);
+        }
+
+        /* ── Shortener page elements ── */
+        .shortener-section {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 20px 100px;
+        }
+        .shortener-title {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin: 0 0 8px;
+            line-height: 1.1;
+        }
+        .shortener-subtitle {
+            font-family: "area", sans-serif;
+            font-weight: 400;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin: 0 0 40px;
+        }
+        .form-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 40px;
+        }
+        .form-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .form-row input {
+            flex: 1;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.7);
+            font-family: "area", sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+        .form-row input::placeholder { color: #999; }
+        .input-custom-code { max-width: 180px; }
+        .btn-shorten {
+            display: inline-block;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-family: "area-normal", sans-serif;
+            font-weight: 900;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            cursor: pointer;
+            width: 100%;
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 14px;
+        }
+        .result-label {
+            font-family: "area-normal", sans-serif;
+            font-weight: 900;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .result-link { display: flex; align-items: center; gap: 12px; }
+        .result-link a { font-family: "area", sans-serif; font-size: 1.1rem; color: var(--text-main); word-break: break-all; }
+        .btn-copy {
+            flex-shrink: 0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.12);
+            background: rgba(255,255,255,0.7);
+            font-family: "area-normal", sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .error-msg {
+            margin-top: 12px;
+            padding: 12px 16px;
+            background: rgba(220,50,50,0.08);
+            border: 1px solid rgba(220,50,50,0.2);
+            border-radius: 10px;
+            color: #b33;
+            font-family: "area", sans-serif;
+            font-size: 0.9rem;
+        }
+        .links-header {
+            font-family: "area-normal", sans-serif;
+            font-weight: 900;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 0 0 16px;
+        }
+        .links-list { display: flex; flex-direction: column; gap: 12px; }
+        .link-item {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 18px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .link-info { flex: 1; min-width: 0; }
+        .link-short { font-family: "area-normal", sans-serif; font-weight: 700; font-size: 1rem; color: var(--text-main); word-break: break-all; }
+        .link-dest { font-family: "area", sans-serif; font-size: 0.85rem; color: var(--text-muted); word-break: break-all; margin-top: 4px; }
+        .link-date { font-family: "area", sans-serif; font-size: 0.75rem; color: #aaa; margin-top: 4px; }
+        .link-actions { display: flex; gap: 8px; flex-shrink: 0; }
+        .btn-delete {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(220,50,50,0.2);
+            background: rgba(220,50,50,0.06);
+            color: #b33;
+            font-family: "area-normal", sans-serif;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .empty-state { font-family: "area", sans-serif; font-size: 0.95rem; color: var(--text-muted); text-align: center; padding: 40px 20px; }
+
+        /* ── New Tab preview ── */
+        .newtab-preview {
+            background: #f0f2f5;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(255,255,255,0.8) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(200,200,200,0.2) 0%, transparent 50%);
+            padding: 48px 10%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        .newtab-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+        }
+        .newtab-brand img { height: 45px; width: auto; display: block; }
+        .wifi-card {
+            background: rgba(255,255,255,0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            color: #666;
+            font-family: "area", sans-serif;
+        }
+        .wifi-icon { display: flex; align-items: center; color: #000; }
+        .wifi-details { display: flex; flex-direction: column; gap: 2px; }
+        .wifi-details strong { color: #1a1a1a; font-family: "area-normal", sans-serif; font-weight: 900; letter-spacing: 0.02em; }
+        .newtab-clock {
+            text-align: center;
+            font-family: "area-normal", sans-serif;
+            font-weight: 900;
+            font-size: clamp(6rem, 15vw, 10rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            color: #000;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .newtab-date {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: #666;
+            font-family: "area", sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        .quick-links { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+        .quick-link {
+            background: rgba(255,255,255,0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-family: "area-normal", sans-serif;
+            font-weight: 900;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quick-link svg { width: 18px; height: 18px; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+<div id="site-header" data-variant="home" data-back-text="Home"></div>
+
+<main id="main-content">
+
+<!-- ═══════════════════════ HOMEPAGE ═══════════════════════ -->
+
+<section class="hero">
+    <h1>Lorem Ipsum</h1>
+    <p class="tagline">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+</section>
+
+<section class="why-highlights">
+    <div class="why-highlights-inner">
+        <h2>Lorem Ipsum?</h2>
+        <div class="why-points">
+            <div class="why-point">
+                <strong>Lorem Ipsum</strong>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+            </div>
+            <div class="why-point">
+                <strong>Lorem Ipsum</strong>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+            </div>
+            <div class="why-point">
+                <strong>Lorem Ipsum</strong>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+            </div>
+        </div>
+        <a href="/why.html" class="btn-why">Lorem Ipsum &rarr;</a>
+    </div>
+</section>
+
+<div class="stats-row">
+    <div class="stat">
+        <div class="stat-number">00</div>
+        <div class="stat-label">Lorem Ipsum</div>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat">
+        <div class="stat-number">$00</div>
+        <div class="stat-label">Lorem ipsum<br>consectetur adipiscing</div>
+    </div>
+</div>
+
+<section class="offer-section">
+    <div class="offer-card">
+        <div class="spots-badge">Lorem Ipsum. Ever.</div>
+        <h2>Lorem Ipsum<br>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet &mdash; consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <div class="price-row">
+            <div class="price-now">$00</div>
+            <div class="price-arrow">/</div>
+            <div class="price-worth">Lorem</div>
+        </div>
+        <div class="price-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <ul class="perks">
+            <li>Lorem ipsum dolor sit amet &mdash; consectetur adipiscing elit sed do eiusmod</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipiscing</li>
+        </ul>
+        <p style="margin: 16px 0 0; text-align: center;">
+            <a href="/founding-benefits.html" class="back-link">Lorem ipsum consectetur adipiscing &rarr;</a>
+        </p>
+        <a href="https://pay.sgfcowork.com/b/8x2cN68GY6Ux6I233q5J601" class="btn-founding">
+            Lorem Ipsum Dolor Sit Amet
+            <span>Lorem ipsum dolor sit amet. No commitment &mdash; cancel anytime before we open. By purchasing, you agree to the Terms &amp; Conditions.</span>
+        </a>
+    </div>
+</section>
+
+<div class="or-divider">— Lorem ipsum —</div>
+
+<section class="signup-section" aria-labelledby="waitlist-heading">
+    <h3 id="waitlist-heading">Lorem ipsum dolor</h3>
+    <div class="mailchimp-container">
+        <div id="mc_embed_signup">
+            <form action="https://sgfcowork.us8.list-manage.com/subscribe/post?u=ea42f4285acf9d19dff3bf6b1&id=4be0b7bc36&f_id=00a457e1f0" method="post" class="validate" target="_self" novalidate="" aria-label="Join the waitlist">
+                <div class="mc-field-group">
+                    <label for="mce-FNAME">Lorem ipsum</label>
+                    <input type="text" name="FNAME" class="required text" id="mce-FNAME" required value="" placeholder="LOREM IPSUM" autocomplete="given-name">
+                </div>
+                <div class="mc-field-group">
+                    <label for="mce-EMAIL">Lorem ipsum</label>
+                    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="" placeholder="LOREM IPSUM" autocomplete="email">
+                </div>
+                <div class="clear">
+                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="LOREM IPSUM">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="trust-section" aria-labelledby="trust-heading">
+    <h2 id="trust-heading">Lorem Ipsum Dolor Sit</h2>
+    <p class="trust-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <div class="trust-badges">
+        <div class="trust-badge">
+            <div class="badge-icon" aria-hidden="true">&#128274;</div>
+            <div class="badge-label">Lorem<br>Ipsum</div>
+        </div>
+        <div class="trust-badge">
+            <div class="badge-icon" aria-hidden="true">&#8635;</div>
+            <div class="badge-label">Lorem<br>Ipsum</div>
+        </div>
+        <div class="trust-badge">
+            <div class="badge-icon" aria-hidden="true">&#9878;</div>
+            <div class="badge-label">Lorem<br>Ipsum</div>
+        </div>
+        <div class="trust-badge">
+            <div class="badge-icon" aria-hidden="true">&#9993;</div>
+            <div class="badge-label">Lorem<br>Ipsum</div>
+        </div>
+    </div>
+    <ul class="faq-list">
+        <li class="faq-item">
+            <h3 class="faq-question" role="button" tabindex="0" aria-expanded="false">Lorem ipsum dolor sit amet?</h3>
+            <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. See our <a href="/terms.html">Terms &amp; Conditions</a> for full details.</p>
+        </li>
+        <li class="faq-item">
+            <h3 class="faq-question" role="button" tabindex="0" aria-expanded="false">Lorem ipsum dolor sit amet consectetur?</h3>
+            <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </li>
+        <li class="faq-item">
+            <h3 class="faq-question" role="button" tabindex="0" aria-expanded="false">Lorem ipsum dolor sit amet?</h3>
+            <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </li>
+        <li class="faq-item">
+            <h3 class="faq-question" role="button" tabindex="0" aria-expanded="false">Lorem ipsum dolor sit amet?</h3>
+            <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </li>
+        <li class="faq-item">
+            <h3 class="faq-question" role="button" tabindex="0" aria-expanded="false">Lorem ipsum dolor sit amet consectetur?</h3>
+            <p class="faq-answer">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor. You can reach us at <a href="mailto:sean@sgf.work">lorem@lorem.com</a> &mdash; lorem ipsum dolor sit amet.</p>
+        </li>
+        <li class="faq-item">
+            <h3 class="faq-question" role="button" tabindex="0" aria-expanded="false">Lorem ipsum dolor sit amet?</h3>
+            <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </li>
+        <li class="faq-item">
+            <h3 class="faq-question" role="button" tabindex="0" aria-expanded="false">Lorem ipsum dolor sit amet consectetur?</h3>
+            <p class="faq-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Email <a href="mailto:hello@sgf.work">lorem@lorem.com</a> lorem ipsum. Note that lorem ipsum dolor sit amet permanently.</p>
+        </li>
+    </ul>
+</section>
+
+<section class="blog-section" aria-labelledby="blog-heading">
+    <h2 id="blog-heading">Lorem Ipsum</h2>
+    <div class="blog-grid">
+        <a href="/1.html" class="blog-card">
+            <div class="blog-card-content">
+                <span class="blog-category">Lorem</span>
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <span class="read-more">Lorem Ipsum &rarr;</span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<section class="sponsors-section" aria-labelledby="sponsors-heading">
+    <div class="sponsors-divider"></div>
+    <h2 id="sponsors-heading">Lorem Ipsum Dolor</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.</p>
+    <a href="/partnership.html" class="btn-sponsor">Lorem Ipsum Dolor</a>
+</section>
+
+<section class="disclosures" aria-label="Disclosures">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum subscriptions can be cancelled anytime before we open. See our <a href="/terms.html">Terms &amp; Conditions</a> for full details.</p>
+</section>
+
+<!-- ═══════════════════════ LP-002: SPLIT HERO ═══════════════════════ -->
+
+<div class="lp-002">
+    <section class="split-hero">
+        <div class="hero-left">
+            <div class="urgency-badge">
+                <span class="dot" aria-hidden="true"></span>
+                Lorem ipsum dolor sit amet
+            </div>
+            <h1>Lorem<br>Ipsum<br>Dolor<br>Sit</h1>
+            <p class="subtitle">
+                Lorem ipsum dolor sit amet. Consectetur adipiscing elit &mdash; sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="hero-stats">
+                <div>
+                    <div class="hero-stat-number">$00</div>
+                    <div class="hero-stat-label">Lorem ipsum</div>
+                </div>
+                <div>
+                    <div class="hero-stat-number">00</div>
+                    <div class="hero-stat-label">Lorem ipsum</div>
+                </div>
+                <div>
+                    <div class="hero-stat-number">00/7</div>
+                    <div class="hero-stat-label">Lorem ipsum</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="spots-badge">Lorem Ipsum. Ever.</div>
+            <h2>Lorem ipsum dolor<br>sit amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+            <div class="price-row">
+                <div class="price-now">$00</div>
+                <div class="price-arrow">/</div>
+                <div class="price-worth">Lorem ipsum dolor</div>
+            </div>
+            <div class="price-note">Lorem ipsum dolor sit amet.</div>
+            <a href="https://pay.sgfcowork.com/b/8x2cN68GY6Ux6I233q5J601" class="btn-founding">
+                Lorem Ipsum Dolor Sit Amet
+                <span>Lorem ipsum dolor sit amet. No commitment &mdash; cancel anytime before we open. By purchasing, you agree to the Terms &amp; Conditions.</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="perks-bar">
+        <div class="perks-bar-inner">
+            <div class="perk-item">
+                <strong>Lorem Ipsum</strong>
+                <span>Lorem ipsum dolor sit amet</span>
+            </div>
+            <div class="perk-item">
+                <strong>Lorem Ipsum</strong>
+                <span>Lorem ipsum dolor sit amet</span>
+            </div>
+            <div class="perk-item">
+                <strong>Lorem Ipsum</strong>
+                <span>Lorem ipsum dolor sit amet</span>
+            </div>
+            <div class="perk-item compare-title">
+                <strong>Lorem Ipsum</strong>
+                <span>Lorem ipsum &mdash; dolor sit amet</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-section">
+        <h2>Lorem ipsum dolor<br>sit amet</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua &mdash; lorem ipsum dolor sit amet consectetur.</p>
+        <div class="compare-grid">
+            <div class="compare-card">
+                <h3>Lorem ipsum</h3>
+                <div class="compare-price">$000</div>
+                <div class="compare-period">Lorem ipsum</div>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                </ul>
+            </div>
+            <div class="compare-card highlight">
+                <h3>Lorem Ipsum Dolor</h3>
+                <div class="compare-price">$00</div>
+                <div class="compare-period">Lorem ipsum &mdash; dolor sit amet</div>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet consectetur</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <h2>Lorem Ipsum Dolor</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🔒</div>
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🗳️</div>
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">📣</div>
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">📋</div>
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet*</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="or-divider">— Lorem ipsum —</div>
+
+    <section class="signup-section" aria-labelledby="waitlist-lp002">
+        <h3 id="waitlist-lp002">Lorem ipsum dolor sit amet.</h3>
+        <div class="mailchimp-container">
+            <div id="mc_embed_signup_lp002">
+                <form action="https://sgfcowork.us8.list-manage.com/subscribe/post?u=ea42f4285acf9d19dff3bf6b1&id=4be0b7bc36&f_id=00a457e1f0" method="post" class="validate" target="_self" novalidate="" aria-label="Join the waitlist">
+                    <div class="mc-field-group">
+                        <label for="mce-FNAME-lp002">Lorem ipsum</label>
+                        <input type="text" name="FNAME" class="required text" id="mce-FNAME-lp002" required value="" placeholder="LOREM IPSUM" autocomplete="given-name">
+                    </div>
+                    <div class="mc-field-group">
+                        <label for="mce-EMAIL-lp002">Lorem ipsum</label>
+                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL-lp002" required value="" placeholder="LOREM IPSUM" autocomplete="email">
+                    </div>
+                    <div class="clear">
+                        <input type="submit" name="subscribe" class="button" value="LOREM IPSUM">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ═══════════════════════ LP-003: HERO FULL ═══════════════════════ -->
+
+<div class="lp-003">
+    <section class="hero-full">
+        <p class="hero-eyebrow">Lorem Ipsum &middot; Lorem Ipsum</p>
+        <h1>Lorem ipsum<br>dolor sit<br>amet <em>consectetur</em></h1>
+        <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <div class="hero-cta-row">
+            <a href="https://pay.sgfcowork.com/b/8x2cN68GY6Ux6I233q5J601" class="btn-primary">Lorem Ipsum Dolor Sit Amet</a>
+            <span class="hero-cta-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit. By purchasing, you agree to the Terms &amp; Conditions.</span>
+        </div>
+    </section>
+
+    <section class="proof-strip">
+        <div class="proof-item">
+            <div class="proof-number">$0K+</div>
+            <div class="proof-label">Lorem ipsum dolor</div>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+            <div class="proof-number">00</div>
+            <div class="proof-label">Lorem ipsum dolor</div>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+            <div class="proof-number">$00</div>
+            <div class="proof-label">Lorem ipsum &mdash; dolor sit amet</div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+    </section>
+
+    <section class="quote-block">
+        <blockquote class="quote-inner">
+            <p class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <footer class="quote-attr"><cite>Lorem ipsum, Dolor</cite></footer>
+        </blockquote>
+    </section>
+
+    <section class="features-section">
+        <h2>Lorem ipsum dolor</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">⚡</div>
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🔑</div>
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🤝</div>
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🔇</div>
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🔒</div>
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">💰</div>
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="final-cta-card">
+            <h2>Lorem ipsum dolor<br>sit amet</h2>
+            <p>Lorem ipsum dolor sit amet. Consectetur adipiscing elit sed do eiusmod tempor.</p>
+            <div class="final-price">$00<span style="font-size: 0.5em;">/mo</span></div>
+            <div class="final-price-sub">Lorem ipsum &middot; Lorem ipsum dolor sit amet</div>
+            <a href="https://pay.sgfcowork.com/b/8x2cN68GY6Ux6I233q5J601" class="btn-founding-light">
+                Lorem Ipsum Dolor Sit Amet
+                <span>Lorem ipsum dolor. No commitment. By purchasing, you agree to the Terms &amp; Conditions.</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="or-divider">— Lorem ipsum —</div>
+
+    <section class="signup-section" aria-labelledby="waitlist-lp003">
+        <h3 id="waitlist-lp003">Lorem ipsum dolor sit amet</h3>
+        <div class="mailchimp-container">
+            <div id="mc_embed_signup_lp003">
+                <form action="https://sgfcowork.us8.list-manage.com/subscribe/post?u=ea42f4285acf9d19dff3bf6b1&id=4be0b7bc36&f_id=00a457e1f0" method="post" class="validate" target="_self" novalidate="" aria-label="Join the waitlist">
+                    <div class="mc-field-group">
+                        <label for="mce-FNAME-lp003">Lorem ipsum</label>
+                        <input type="text" name="FNAME" class="required text" id="mce-FNAME-lp003" required value="" placeholder="LOREM IPSUM" autocomplete="given-name">
+                    </div>
+                    <div class="mc-field-group">
+                        <label for="mce-EMAIL-lp003">Lorem ipsum</label>
+                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL-lp003" required value="" placeholder="LOREM IPSUM" autocomplete="email">
+                    </div>
+                    <div class="clear">
+                        <input type="submit" name="subscribe" class="button" value="LOREM IPSUM">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ═══════════════════════ SUBPAGE NAV (visual reference) ═══════════════════════ -->
+
+<div class="subnav-preview" aria-hidden="true">
+    <a href="/index.html" class="logo-link">
+        <img src="/.netlify/images?url=/assets/images/logo.png&w=600" width="289" height="65" alt="SGF.work" class="logo" style="height:28px;">
+    </a>
+    <a href="/index.html" class="back-link">&larr; Lorem</a>
+</div>
+
+<!-- ═══════════════════════ WHY PAGE ═══════════════════════ -->
+
+<section class="page-hero">
+    <h1>Lorem<br>Ipsum?</h1>
+    <p class="subtitle">
+        Lorem ipsum dolor sit amet &mdash; consectetur adipiscing elit sed do eiusmod tempor.
+        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.
+        Lorem ipsum dolor sit amet consectetur adipiscing elit.
+    </p>
+</section>
+
+<div class="pillars">
+    <div class="pillar">
+        <div class="pillar-number">01 &mdash; Lorem Ipsum</div>
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="pillar">
+        <div class="pillar-number">02 &mdash; Lorem Ipsum</div>
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+    </div>
+    <div class="pillar">
+        <div class="pillar-number">03 &mdash; Lorem Ipsum</div>
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+    </div>
+</div>
+
+<div class="section-divider" style="margin-top: 60px;"></div>
+
+<section class="why-section">
+    <div class="section-label">Lorem Ipsum &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum.<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+    <div class="compare-grid">
+        <div class="compare-card">
+            <h3>Lorem Ipsum</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+            </ul>
+        </div>
+        <div class="compare-card">
+            <h3>Lorem Ipsum</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section">
+    <div class="section-label">Lorem Ipsum &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit &mdash; sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="solution-grid">
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod &mdash; lorem ipsum.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor. Lorem ipsum.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section">
+    <div class="section-label">Lorem Ipsum &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div style="overflow-x: auto;" role="region" aria-label="Infrastructure specifications" tabindex="0">
+        <table class="infra-table">
+            <thead>
+                <tr>
+                    <th>Lorem</th>
+                    <th>Lorem Ipsum</th>
+                    <th>Lorem Ipsum Dolor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipiscing.</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipiscing.</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Lorem ipsum dolor &mdash; Lorem ipsum</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipiscing.</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipiscing.</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipiscing.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section">
+    <div class="section-label">Lorem Ipsum &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum.<br>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit &mdash; sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    <div class="solution-grid">
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit &mdash; lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing. Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section">
+    <div class="section-label">Lorem Ipsum &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet.</p>
+    <div class="options-grid">
+        <div class="option-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="best-for">Lorem: Lorem &amp; Lorem</div>
+        </div>
+        <div class="option-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="best-for">Lorem: Lorem Lorem</div>
+        </div>
+        <div class="option-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="best-for">Lorem: Lorem &amp; Lorem</div>
+        </div>
+        <div class="option-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum &ndash; lorem ipsum dolor sit amet.</p>
+            <div class="best-for">Lorem: Lorem &amp; Lorem</div>
+            <span class="coming-soon-badge">Lorem Ipsum</span>
+        </div>
+    </div>
+</section>
+
+<div style="padding: 0 20px;">
+    <div class="section-divider"></div>
+</div>
+
+<section class="why-section" style="padding-bottom: 40px;">
+    <div class="highlight-card">
+        <div class="section-label" style="color: rgba(255,255,255,0.4);">Lorem Ipsum &middot; Lorem Ipsum</div>
+        <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+        <p class="section-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua &mdash; lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        <ul>
+            <li>Lorem Ipsum &mdash; Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.</li>
+            <li>Lorem Ipsum &mdash; Lorem ipsum dolor sit amet consectetur. Lorem ipsum &mdash; lorem ipsum dolor.</li>
+            <li>Lorem Ipsum &mdash; Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum.</li>
+            <li>Lorem Ipsum &mdash; Lorem ipsum dolor sit amet consectetur adipiscing. Lorem ipsum dolor.</li>
+        </ul>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section">
+    <div class="section-label">Lorem Ipsum &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+    <div class="phase-grid">
+        <div class="phase-card">
+            <div class="phase-num">Lorem I &mdash; Lorem</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum &middot; Lorem ipsum &amp; Lorem</p>
+        </div>
+        <div class="phase-card">
+            <div class="phase-num">Lorem II &mdash; Lorem</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum &middot; Lorem ipsum &amp; Lorem</p>
+        </div>
+        <div class="phase-card">
+            <div class="phase-num">Lorem III &mdash; Lorem</div>
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+    </div>
+</section>
+
+<section class="why-cta">
+    <h2>Lorem Ipsum?</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua &mdash; lorem ipsum sit amet.</p>
+    <a href="https://pay.sgfcowork.com/b/8x2cN68GY6Ux6I233q5J601" class="btn-cta">
+        Lorem Ipsum Dolor Sit Amet
+        <span>Lorem ipsum dolor sit amet consectetur. By purchasing, you agree to the Terms &amp; Conditions.</span>
+    </a>
+    <p style="font-size: 0.82rem; color: #999; font-family: 'area', sans-serif; font-weight: 400; margin-top: 16px; margin-bottom: 0;">Lorem ipsum dolor amet. No commitment &mdash; cancel anytime before we open. <a href="#waitlist-heading" style="color: #666;">Lorem ipsum</a> instead.</p>
+</section>
+
+<p class="signature">Lorem K. Ipsum &middot; Lorem &amp; Lorem, Lorem.ipsum</p>
+
+<!-- ═══════════════════════ CLIMATE PAGE ═══════════════════════ -->
+
+<section class="page-hero">
+    <h1>Lorem<br>Ipsum</h1>
+    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet &mdash; lorem ipsum consectetur adipiscing elit lorem ipsum dolor.</p>
+</section>
+
+<div class="climate-pillars">
+    <div class="climate-pillar">
+        <div class="climate-pillar-icon" aria-hidden="true">&#9728;&#65039;</div>
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+    <div class="climate-pillar">
+        <div class="climate-pillar-icon" aria-hidden="true">&#129302;</div>
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor &amp; sit amet</p>
+    </div>
+    <div class="climate-pillar">
+        <div class="climate-pillar-icon" aria-hidden="true">&#127793;</div>
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+</div>
+
+<div class="section-divider" style="margin-top: 60px;"></div>
+
+<section class="why-section climate-section">
+    <div class="section-label">Lorem &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit &mdash; lorem ipsum dolor sit amet consectetur.</p>
+    <div class="solution-grid">
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit &mdash; lorem ipsum.</p>
+        </div>
+    </div>
+</section>
+
+<div style="padding: 0 20px;">
+    <div class="section-divider"></div>
+</div>
+
+<section class="why-section" style="padding-bottom: 40px;">
+    <div class="highlight-card climate-highlight">
+        <div class="section-label" style="color: rgba(74, 222, 128, 0.6);">Lorem Ipsum &middot; Lorem Ipsum</div>
+        <h2>Lorem Ipsum Lorem<br>Lorem Ipsum.</h2>
+        <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua &mdash; lorem ipsum dolor sit amet consectetur adipiscing.</p>
+        <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor.</p>
+        <ul>
+            <li>Lorem ipsum dolor sit amet &ndash; lorem ipsum dolor sit amet consectetur adipiscing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet &mdash; lorem ipsum dolor sit amet consectetur adipiscing.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet.</li>
+        </ul>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section climate-section">
+    <div class="section-label">Lorem &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit &mdash; lorem ipsum dolor sit amet consectetur.</p>
+    <div class="solution-grid">
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section climate-section">
+    <div class="section-label">Lorem &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum &amp;<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet lorem ipsum.</p>
+    <div class="solution-grid">
+        <div class="solution-item climate-card">
+            <h3>Lorem &amp; Lorem</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+        </div>
+    </div>
+</section>
+
+<div style="padding: 0 20px;">
+    <div class="section-divider"></div>
+</div>
+
+<section class="why-section" style="padding-bottom: 40px;">
+    <div class="highlight-card climate-highlight">
+        <div class="section-label" style="color: rgba(74, 222, 128, 0.6);">Lorem &amp; Lorem &middot; Lorem Ipsum</div>
+        <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+        <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet consectetur.</p>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipiscing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipiscing lorem ipsum.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing &mdash; lorem ipsum dolor.</li>
+        </ul>
+        <div style="margin-top: 2rem; display: flex; justify-content: center;">
+            <iframe width="380" height="82" style="border:0;" src="https://climate.stripe.com/badge/2mqGTb?theme=light&size=large&locale=en-US" title="Stripe Climate badge"></iframe>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section climate-section">
+    <div class="section-label">Lorem &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet lorem ipsum.</p>
+    <div class="solution-grid">
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet lorem ipsum &mdash; lorem ipsum dolor.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur lorem ipsum.</p>
+        </div>
+        <div class="solution-item climate-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur lorem ipsum.</p>
+        </div>
+    </div>
+</section>
+
+<section class="climate-commitment">
+    <div class="climate-commitment-inner">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum.</p>
+        <p class="climate-tagline">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+    </div>
+</section>
+
+<!-- ═══════════════════════ FOUNDING BENEFITS ═══════════════════════ -->
+
+<section class="page-hero founding-hero">
+    <h1>Lorem Ipsum<br>Lorem Ipsum</h1>
+    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor sit amet.</p>
+</section>
+
+<section class="founding-snapshot" aria-label="Founding member offer snapshot">
+    <div class="snapshot-item">
+        <div class="snapshot-label">Lorem</div>
+        <div class="snapshot-value">00 Lorem</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+    </div>
+    <div class="snapshot-item">
+        <div class="snapshot-label">Lorem Lorem</div>
+        <div class="snapshot-value">$00/mo</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum.</p>
+    </div>
+    <div class="snapshot-item">
+        <div class="snapshot-label">Lorem Lorem</div>
+        <div class="snapshot-value">0 Lorem Lorem</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet.</p>
+    </div>
+</section>
+
+<section class="why-section" aria-labelledby="benefits-heading">
+    <div class="section-label">Lorem Lorem</div>
+    <h2 id="benefits-heading">Lorem Ipsum Lorem Lorem</h2>
+    <div class="benefits-grid">
+        <article class="benefit-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet.</p>
+        </article>
+        <article class="benefit-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet.</p>
+        </article>
+        <article class="benefit-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum.</p>
+        </article>
+        <article class="benefit-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing lorem ipsum.</p>
+        </article>
+        <article class="benefit-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum.</p>
+        </article>
+        <article class="benefit-card">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.</p>
+        </article>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section founding-timeline" aria-labelledby="timeline-heading">
+    <div class="section-label">Lorem Ipsum</div>
+    <h2 id="timeline-heading">Lorem Ipsum Lorem Lorem Lorem</h2>
+    <ol class="timeline-list">
+        <li>
+            <span>Lorem Ipsum Lorem Lorem</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet.</p>
+        </li>
+        <li>
+            <span>Lorem Ipsum Lorem</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing lorem ipsum dolor sit amet.</p>
+        </li>
+        <li>
+            <span>Lorem Ipsum Lorem Lorem</span>
+            <p>Lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet consectetur.</p>
+        </li>
+    </ol>
+</section>
+
+<section class="founding-cta" aria-label="Founding member actions">
+    <a href="https://pay.sgfcowork.com/b/8x2cN68GY6Ux6I233q5J601" class="btn-cta">
+        Lorem Ipsum Lorem
+        <span>Lorem ipsum dolor sit amet</span>
+    </a>
+    <p class="founding-legal-note">Lorem ipsum lorem ipsum <a href="/terms.html">Terms &amp; Conditions</a>. Lorem ipsum dolor sit amet consectetur.</p>
+</section>
+
+<!-- ═══════════════════════ FOUNDING CREDIT / PAYMENT ═══════════════════════ -->
+
+<div class="container">
+    <h1>Lorem<br><span class="highlight-blue">Ipsum</span></h1>
+    <div class="credit-box">
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum <strong>dolor sit amet consectetur</strong>.<br>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing.</p>
+        <p><em>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur adipiscing.</em></p>
+        <p><a href="/founding-benefits.html" class="back-link">Lorem ipsum lorem ipsum lorem ipsum</a></p>
+    </div>
+    <div class="payment-area" role="region" aria-label="Purchase founding membership">
+        <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 40px 60px; text-align: center; color: var(--text-muted); font-family: 'area', sans-serif; font-size: 0.9rem;">
+            Stripe Buy Button renders here
+        </div>
+        <p class="disclaimer">Lorem ipsum dolor sit amet consectetur. No commitment &mdash; lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet <strong>Lorem</strong>. Lorem ipsum <a href="/terms.html" class="back-link">Lorem Lorem Lorem</a>.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════ PARTNERSHIP ═══════════════════════ -->
+
+<section class="page-hero">
+    <h1>Lorem<br>Ipsum</h1>
+    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor sit amet consectetur adipiscing.</p>
+</section>
+
+<div class="section-divider" style="margin-top: 20px;"></div>
+
+<section class="why-section">
+    <div class="section-label">Lorem Ipsum &middot; Lorem Ipsum Lorem</div>
+    <h2>Lorem Ipsum.<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+    <div class="solution-grid">
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore lorem ipsum dolor.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-section">
+    <div class="section-label">Lorem Ipsum &middot; Lorem Ipsum</div>
+    <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum.</p>
+    <div class="partner-tiers">
+        <div class="partner-tier">
+            <div class="tier-label">Lorem Lorem</div>
+            <h3>Lorem Ipsum</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+            </ul>
+        </div>
+        <div class="partner-tier featured">
+            <div class="tier-label">Lorem Lorem</div>
+            <h3>Lorem Ipsum</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+            </ul>
+        </div>
+        <div class="partner-tier">
+            <div class="tier-label">Lorem Lorem</div>
+            <h3>Lorem Ipsum</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+                <li>Lorem ipsum dolor sit amet lorem</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div style="padding: 0 20px;">
+    <div class="section-divider"></div>
+</div>
+
+<section class="why-section" style="padding-bottom: 40px;">
+    <div class="highlight-card">
+        <div class="section-label" style="color: rgba(255,255,255,0.4);">Lorem Ipsum &middot; Lorem Lorem Lorem</div>
+        <h2>Lorem Ipsum<br>Lorem Ipsum.</h2>
+        <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor sit amet consectetur.</p>
+        <ul>
+            <li>Lorem ipsum &amp; lorem ipsum lorem ipsum dolor sit amet consectetur adipiscing.</li>
+            <li>Lorem ipsum, lorem, and lorem lorem lorem ipsum dolor sit amet lorem ipsum.</li>
+            <li>Lorem lorem, lorem, and lorem lorem lorem ipsum dolor sit amet lorem ipsum.</li>
+            <li>Lorem lorem &amp; lorem lorem lorem ipsum dolor sit amet consectetur.</li>
+        </ul>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="why-cta">
+    <h2>Lorem Ipsum Lorem</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum.</p>
+    <a href="mailto:sean@sgf.work" class="btn-cta">
+        Lorem lorem@lorem.com
+        <span>Lorem ipsum dolor sit amet consectetur</span>
+    </a>
+</section>
+
+<!-- ═══════════════════════ BLOG HUB ═══════════════════════ -->
+
+<section class="page-hero page-hero--wide">
+    <h1>Lorem Ipsum</h1>
+    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet consectetur.</p>
+</section>
+
+<section class="blog-section" aria-labelledby="blog-hub-heading" style="padding-top: 0;">
+    <h2 id="blog-hub-heading" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Lorem Ipsum</h2>
+    <div class="blog-grid" style="margin: 0 auto; max-width: 1000px; padding: 0 20px;">
+        <a href="/1.html" class="blog-card">
+            <div class="blog-card-content">
+                <span class="blog-category">Lorem</span>
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                <span class="read-more">Lorem Ipsum &rarr;</span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<section class="why-cta">
+    <h2>Lorem Ipsum?</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor.</p>
+    <a href="https://pay.sgfcowork.com/b/8x2cN68GY6Ux6I233q5J601" class="btn-cta">
+        Lorem Ipsum Dolor Sit Amet
+        <span>Lorem ipsum dolor sit amet consectetur. By purchasing, you agree to the Terms &amp; Conditions.</span>
+    </a>
+    <p style="font-size: 0.82rem; color: #999; font-family: 'area', sans-serif; font-weight: 400; margin-top: 16px; margin-bottom: 0;">Lorem ipsum dolor amet. No commitment. <a href="#waitlist-heading" style="color: #666;">Lorem ipsum</a> instead.</p>
+</section>
+
+<!-- ═══════════════════════ LEGAL PAGES ═══════════════════════ -->
+
+<div class="legal-page">
+    <div class="container">
+        <h1>Lorem<br>Lorem</h1>
+        <p class="effective-date">Lorem Lorem: Lorem 00, 0000</p>
+
+        <h2>1. Lorem</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ("lorem," "ipsum," or "dolor") lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet consectetur.</p>
+
+        <h2>2. Lorem Ipsum Lorem Lorem</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet:</p>
+        <ul>
+            <li><strong>Lorem Lorem:</strong> Lorem, lorem lorem, lorem lorem, and lorem lorem.</li>
+            <li><strong>Lorem Lorem:</strong> Lorem ipsum dolor sit amet consectetur adipiscing.</li>
+            <li><strong>Lorem Lorem:</strong> Lorem lorem lorem lorem lorem ipsum dolor sit amet.</li>
+        </ul>
+
+        <h2>3. Lorem and Lorem Lorem</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet:</p>
+        <ul>
+            <li><strong>Lorem Lorem:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum.</li>
+            <li><strong>Lorem:</strong> Lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet.</li>
+        </ul>
+
+        <h2>4. Lorem Lorem Lorem</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        <ul>
+            <li><strong>Lorem:</strong> Lorem ipsum dolor sit amet lorem ipsum.</li>
+            <li><strong>Lorem Lorem:</strong> Lorem ipsum dolor sit amet lorem ipsum lorem.</li>
+        </ul>
+
+        <h2>5. Lorem Lorem</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet.</p>
+
+        <h2>6. Lorem Lorem</h2>
+        <p>Lorem ipsum dolor sit amet<br>000 Lorem-00 Lorem #000<br>Lorem, Lorem 00000</p>
+    </div>
+
+    <div class="container">
+        <h1>Lorem &amp;<br>Lorem</h1>
+        <p class="effective-date">Lorem Lorem: Lorem 0000</p>
+
+        <h2>1. Lorem</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet, lorem ipsum dolor lorem ipsum.</p>
+
+        <h2>2. Lorem Lorem</h2>
+        <p>2.1 Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur lorem ipsum.</p>
+        <p>2.2 Lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet.</p>
+        <p>2.3 Lorem ipsum dolor sit amet consectetur lorem ipsum.</p>
+
+        <h2>3. Lorem-Lorem Lorem</h2>
+        <p>3.1 Lorem ipsum dolor sit amet consectetur lorem ipsum. Lorem ipsum dolor sit amet, lorem ipsum dolor lorem.</p>
+
+        <h2>4. Lorem Lorem</h2>
+        <p>4.1 Lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet (lorem ipsum lorem lorem). Lorem ipsum lorem lorem lorem lorem lorem.</p>
+
+        <h2>5. Lorem</h2>
+        <p>5.1 Lorem ipsum dolor sit amet consectetur lorem ipsum dolor lorem ipsum lorem ipsum. Lorem ipsum lorem lorem lorem.</p>
+
+        <h2>6. Lorem Lorem</h2>
+        <p>Lorem ipsum dolor sit amet consectetur lorem ipsum lorem.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════ RETURN PAGE ═══════════════════════ -->
+
+<div class="return-page">
+    <div class="container" style="text-align: center;">
+        <h1>Lorem Ipsum<br>Lorem?</h1>
+        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor sit amet.</p>
+        <a href="mailto:sean@sgf.work?subject=Found%20SGFcowork%20Equipment" class="email-link">Lorem lorem@lorem.com</a>
+        <p class="thank-you">Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════ THANK YOU PAGE ═══════════════════════ -->
+
+<div class="thanks-page">
+    <div class="content">
+        <div class="check-icon" aria-hidden="true">&#10003;</div>
+        <h1>LOREM IPSUM<br>LOREM.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum.</p>
+        <div class="billing-note">
+            Lorem: Lorem ipsum lorem sit amet as <strong>LOREM IPSUM</strong> lorem lorem lorem lorem.
+        </div>
+        <a href="index.html" class="btn-outline">LOREM IPSUM</a>
+    </div>
+</div>
+
+<!-- ═══════════════════════ 404 PAGE ═══════════════════════ -->
+
+<section class="error-section">
+    <div class="error-code">404</div>
+    <h1 class="error-headline">Lorem Ipsum Lorem Lorem</h1>
+    <p class="error-joke">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet consectetur adipiscing elit.
+    </p>
+    <a href="/index.html" class="btn-home">Lorem Ipsum Lorem &rarr;</a>
+</section>
+
+<!-- ═══════════════════════ MEMBERS PORTAL ═══════════════════════ -->
+
+<section class="members-hero">
+    <div class="members-card">
+        <span class="members-tag">Lorem Lorem</span>
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur lorem ipsum.</p>
+    </div>
+</section>
+
+<!-- ═══════════════════════ NEW TAB PAGE ═══════════════════════ -->
+
+<div class="newtab-preview">
+    <div class="newtab-header-row">
+        <div class="newtab-brand">
+            <img src="/.netlify/images?url=/assets/images/logo.png&w=300" alt="SGF.work" style="height:45px;width:auto;">
+        </div>
+        <div class="wifi-card" aria-label="WiFi Information">
+            <div class="wifi-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+            </div>
+            <div class="wifi-details">
+                <span>Lorem: <strong>Lorem Ipsum</strong></span>
+                <span>Lorem: <strong>LoremIpsum00</strong></span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="newtab-clock" id="newtab-clock" aria-live="polite">12:00</div>
+        <div class="newtab-date" id="newtab-date">Lorem, Lorem 0</div>
+    </div>
+    <nav class="quick-links" aria-label="Quick Links">
+        <a href="/resources" class="quick-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;opacity:0.8;">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+            Lorem Ipsum
+        </a>
+        <a href="/events" class="quick-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;opacity:0.8;">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Lorem
+        </a>
+        <a href="/book" class="quick-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;opacity:0.8;">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+            Lorem Lorem
+        </a>
+        <a href="mailto:hello@sgf.work" class="quick-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;opacity:0.8;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Lorem
+        </a>
+    </nav>
+</div>
+
+<!-- ═══════════════════════ LINK SHORTENER ═══════════════════════ -->
+
+<section class="shortener-section">
+    <h1 class="shortener-title">Lorem Ipsum</h1>
+    <p class="shortener-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum.</p>
+
+    <div class="form-card">
+        <form id="shorten-form">
+            <div class="form-row">
+                <input type="url" id="input-url" placeholder="Lorem ipsum dolor sit amet...">
+            </div>
+            <div class="form-row">
+                <input type="text" id="input-code" class="input-custom-code" placeholder="Lorem ipsum (lorem)">
+                <button type="submit" class="btn-shorten" id="btn-submit">Lorem Ipsum</button>
+            </div>
+        </form>
+
+        <div class="error-msg" id="error-msg" role="alert">Lorem ipsum dolor sit amet. Lorem ipsum lorem.</div>
+
+        <div class="result-box" id="result-box" role="status">
+            <div class="result-label">Lorem Lorem Lorem</div>
+            <div class="result-link">
+                <a href="#" id="result-link">lorem.ipsum/s/lorem</a>
+                <button class="btn-copy" id="btn-copy">Lorem</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="links-header">Lorem Lorem</div>
+    <div class="links-list">
+        <div class="link-item">
+            <div class="link-info">
+                <div class="link-short">/s/lorem</div>
+                <div class="link-dest">https://lorem.ipsum.com/b/lorem00ipsum00</div>
+                <div class="link-date">Lorem 0, 0000</div>
+            </div>
+            <div class="link-actions">
+                <button class="btn-copy">Lorem</button>
+                <button class="btn-delete">Lorem</button>
+            </div>
+        </div>
+        <div class="link-item">
+            <div class="link-info">
+                <div class="link-short">/s/ipsum</div>
+                <div class="link-dest">https://lorem.ipsum/dolor.html</div>
+                <div class="link-date">Lorem 00, 0000</div>
+            </div>
+            <div class="link-actions">
+                <button class="btn-copy">Lorem</button>
+                <button class="btn-delete">Lorem</button>
+            </div>
+        </div>
+        <div class="empty-state" style="display:none;">Lorem ipsum dolor sit amet. Lorem ipsum above.</div>
+    </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+
+<section class="disclosures" aria-label="Disclosures">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum subscriptions can be cancelled anytime before we open. Lorem ipsum dolor sit amet consectetur. See our <a href="/terms.html">Terms &amp; Conditions</a> for full details.</p>
+</section>
+
+<div id="site-footer" data-variant="full"></div>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(question) {
+    function toggle() {
+        var item = question.closest('.faq-item');
+        var isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item.active').forEach(function(openItem) {
+            openItem.classList.remove('active');
+            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+        }
+    }
+    question.addEventListener('click', toggle);
+    question.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+});
+
+// New tab clock
+function updateNewtabClock() {
+    var now = new Date();
+    var hours = now.getHours() % 12 || 12;
+    var minutes = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+    var clockEl = document.getElementById('newtab-clock');
+    var dateEl = document.getElementById('newtab-date');
+    if (clockEl) clockEl.textContent = hours + ':' + minutes;
+    if (dateEl) dateEl.textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+}
+updateNewtabClock();
+setInterval(updateNewtabClock, 1000);
+</script>
+
+</body>
+</html>
