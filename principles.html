@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Principles | Beautiful Web Design</title>
+    <meta name="description" content="The five core principles of beautiful web design: typography, color, layout, whitespace, and motion.">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/oii6upi.css?display=swap">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/pages.css">
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+    <script src="/assets/js/components.js" defer></script>
+    <script src="/assets/js/animations.js" defer></script>
+</head>
+<body>
+
+<div id="site-header" data-variant="main"></div>
+
+<main id="main-content">
+
+<!-- ═══════════════════════ PAGE HERO ═══════════════════════ -->
+
+<section class="page-hero">
+    <div class="section-label">Five Principles</div>
+    <h1>The craft of <br> beautiful design</h1>
+    <p class="subtitle">Every beautiful website you have ever admired is built on a small set of timeless principles. Learn them, and you will see design differently forever.</p>
+</section>
+
+<!-- ═══════════════════════ PRINCIPLE 01: TYPOGRAPHY ═══════════════════════ -->
+
+<section class="why-section">
+    <div class="section-label">01 · Typography</div>
+    <h2>Type is the voice of your page.</h2>
+    <p class="section-desc">Typography is not just picking a font. It is the system of decisions — typeface, size, weight, spacing, and measure — that gives your words a personality before they are even read. Most visitors will leave a page in under ten seconds; type is what earns the next ten.</p>
+    <div class="solution-grid">
+        <div class="solution-item">
+            <h3>Typeface Choice</h3>
+            <p>Serifs carry tradition and authority. Sans-serifs feel modern and clean. Neither is better — match the typeface's personality to your content. Choose one for headings, one for body, and stop there.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Scale &amp; Hierarchy</h3>
+            <p>A modular scale (1.25×, 1.333×, 1.5×) creates visual rhythm. Use <code>clamp()</code> to make sizes fluid across viewports. The ratio between your smallest and largest text tells the eye which words matter.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Line Length &amp; Leading</h3>
+            <p>Comfortable reading lives between 45 and 75 characters per line. Set <code>line-height</code> to 1.5–1.7 for body text. Too narrow feels cramped; too wide loses the return sweep. Both kill comprehension.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Tracking &amp; Weight Contrast</h3>
+            <p>Uppercase labels and small caps need generous letter-spacing (0.08–0.15em). Heavy weight contrast between a headline and its subtext — 900 vs 400 — creates instant hierarchy without needing different colors.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ PRINCIPLE 02: COLOR ═══════════════════════ -->
+
+<section class="why-section">
+    <div class="section-label">02 · Color</div>
+    <h2>Color creates emotion before words do.</h2>
+    <p class="section-desc">Color is processed faster than text. A visitor feels your palette before they read a single word. Get it wrong and nothing else matters. Get it right and the content almost disappears — which is exactly what you want.</p>
+    <div class="solution-grid">
+        <div class="solution-item">
+            <h3>HSL: The Designer's Model</h3>
+            <p>Work in HSL (hue, saturation, lightness) rather than hex. Tweaking saturation alone adjusts energy; lightness alone adjusts weight. This lets you build cohesive palettes systematically instead of by luck.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Contrast &amp; Accessibility</h3>
+            <p>Body text needs at least a 4.5:1 contrast ratio against its background (WCAG AA). Large text and UI components need 3:1. Use a contrast checker before shipping — what looks fine on your calibrated monitor may be invisible on others.</p>
+        </div>
+        <div class="solution-item">
+            <h3>The 60 / 30 / 10 Rule</h3>
+            <p>60% dominant (background), 30% secondary (surfaces, cards), 10% accent (calls to action, links, highlights). Violate this ratio and everything competes. Honor it and the eye always knows where to go.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Dark Mode &amp; CSS Custom Properties</h3>
+            <p>Build your palette as CSS custom properties from day one: <code>--bg</code>, <code>--text-main</code>, <code>--accent</code>. Swap their values inside <code>@media (prefers-color-scheme: dark)</code> and dark mode costs almost nothing.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ PRINCIPLE 03: LAYOUT ═══════════════════════ -->
+
+<section class="why-section">
+    <div class="section-label">03 · Layout</div>
+    <h2>Structure gives the eye a path.</h2>
+    <p class="section-desc">Layout is not about filling space — it is about directing attention. A well-structured page tells a story without words: it says here is the most important thing, then here is the second most important thing. Visitors follow that path without noticing it.</p>
+    <div class="solution-grid">
+        <div class="solution-item">
+            <h3>Grid Systems</h3>
+            <p>CSS Grid lets you define named areas and relationships explicitly. A 12-column grid gives you enough flexibility for almost any layout while still constraining you enough to stay consistent. Name your areas; name your intent.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Visual Hierarchy</h3>
+            <p>Eyes scan in F-patterns (news content) and Z-patterns (landing pages). Design to these natural paths: put your most important element where the eye lands first, not where there happens to be space.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Responsive &amp; Mobile-First</h3>
+            <p>Start with the smallest viewport and add complexity as space grows. <code>min-width</code> media queries stack cleanly. The mobile layout forces you to prioritize — carry that discipline to desktop instead of bolting on a collapsed version later.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Alignment &amp; Proximity</h3>
+            <p>Related items belong close together; unrelated items need clear separation. Every element should align to something — even if that something is implied. Misalignment looks accidental. Intentional misalignment looks like art.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ PRINCIPLE 04: WHITESPACE ═══════════════════════ -->
+
+<section class="why-section">
+    <div class="section-label">04 · Whitespace</div>
+    <h2>Space is not empty — it is doing work.</h2>
+    <p class="section-desc">Beginners fill space. Experienced designers remove things. Whitespace is not wasted real estate; it is the pause between phrases that lets ideas breathe. The most expensive-feeling designs are almost always the most generous with space.</p>
+    <div class="solution-grid">
+        <div class="solution-item">
+            <h3>Macro vs. Micro Space</h3>
+            <p>Macro whitespace is the large breathing room between sections — the big padding above and below headings. Micro whitespace is the gap between a label and its value, between a bullet and its text. Both matter independently.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Padding as Breathing Room</h3>
+            <p>Cards and containers feel premium when they have generous internal padding (32–48px). Dense packing signals cost-cutting or confusion. If everything feels cramped, double your padding before trying anything else.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Negative Space in Composition</h3>
+            <p>Negative space can carry meaning — the arrow hidden in FedEx, the face in Toblerone. Even without illusions, empty space around a hero element elevates it. Isolation = importance.</p>
+        </div>
+        <div class="solution-item">
+            <h3>When Density is Intentional</h3>
+            <p>Data tables, dashboards, and code editors are dense by necessity. The rule is not always add space — it is use space intentionally. Dense layouts need internal rhythm: consistent row heights, aligned columns, predictable groupings.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ PRINCIPLE 05: MOTION ═══════════════════════ -->
+
+<section class="why-section">
+    <div class="section-label">05 · Motion</div>
+    <h2>Animation communicates change.</h2>
+    <p class="section-desc">Motion done well is invisible. You notice it only in its absence — when something snaps into place without a transition and feels broken. Every animation on your page should answer one question: what changed, and how did it get here?</p>
+    <div class="solution-grid">
+        <div class="solution-item">
+            <h3>Easing &amp; Duration</h3>
+            <p>Linear motion looks mechanical. <code>ease-out</code> (fast start, slow finish) feels natural for elements entering the screen. <code>ease-in</code> works for exits. Duration: 150–250ms for micro-interactions, 300–500ms for larger transitions. Slower than 500ms feels laggy.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Scroll Reveal &amp; Entrance</h3>
+            <p>Content that fades up on scroll feels editorial and considered. Keep the movement subtle — 20–30px translate, 0.3s ease-out. Exaggerated scroll animations (parallax, large slides) impress for three seconds and then annoy forever.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Hover States as Micro-interactions</h3>
+            <p>Every interactive element should respond to hover: a color shift, a lift, a subtle scale. These micro-interactions are a conversation — the interface acknowledging that it heard you. Without them, a page feels static and unresponsive.</p>
+        </div>
+        <div class="solution-item">
+            <h3>Accessibility: <code>prefers-reduced-motion</code></h3>
+            <p>Around 35% of users have some sensitivity to motion. Wrap all non-essential animations in <code>@media (prefers-reduced-motion: no-preference)</code>. This is not optional — it is the ethical baseline for any production site.</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════ KEY TAKEAWAY ═══════════════════════ -->
+
+<div style="padding: 60px 6% 0;">
+    <div class="highlight-card">
+        <div class="section-label">Key Takeaway</div>
+        <h2>Principles compound.</h2>
+        <p class="section-desc" style="color: rgba(255,255,255,0.7);">None of these principles works alone. Beautiful type on a bad layout still fails. Good color in a cramped space still feels wrong. The magic is in the combination — when all five principles work together, design becomes invisible, and content becomes everything.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════ CTA ═══════════════════════ -->
+
+<div class="why-cta">
+    <h2>Build your vocabulary.</h2>
+    <p>Every principle has a language. Learn the terms and you will communicate design with precision.</p>
+    <a href="/glossary.html" class="btn-cta">Explore the Glossary <span>30+ terms defined</span></a>
+</div>
+
+</main>
+
+<div id="site-footer" data-variant="full"></div>
+
+</body>
+</html>

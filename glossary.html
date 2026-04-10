@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Glossary | Beautiful Web Design</title>
+    <meta name="description" content="30+ web design terms defined clearly — from baseline grid to Z-pattern scanning.">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/oii6upi.css?display=swap">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/pages.css">
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+    <script src="/assets/js/components.js" defer></script>
+    <script src="/assets/js/animations.js" defer></script>
+</head>
+<body>
+
+<div id="site-header" data-variant="main"></div>
+
+<main id="main-content">
+
+<!-- ═══════════════════════ PAGE HERO ═══════════════════════ -->
+
+<section class="page-hero page-hero--wide">
+    <div class="section-label">Reference</div>
+    <h1>Design Glossary</h1>
+    <p class="subtitle">30+ terms every web designer should know, defined clearly and without jargon.</p>
+</section>
+
+<!-- ═══════════════════════ LETTER NAV ═══════════════════════ -->
+
+<div class="letter-nav" role="navigation" aria-label="Jump to letter">
+    <a href="#letter-B">B</a>
+    <a href="#letter-C">C</a>
+    <a href="#letter-D">D</a>
+    <a href="#letter-E">E</a>
+    <a href="#letter-F">F</a>
+    <a href="#letter-G">G</a>
+    <a href="#letter-H">H</a>
+    <a href="#letter-K">K</a>
+    <a href="#letter-L">L</a>
+    <a href="#letter-M">M</a>
+    <a href="#letter-N">N</a>
+    <a href="#letter-O">O</a>
+    <a href="#letter-P">P</a>
+    <a href="#letter-R">R</a>
+    <a href="#letter-S">S</a>
+    <a href="#letter-T">T</a>
+    <a href="#letter-V">V</a>
+    <a href="#letter-W">W</a>
+    <a href="#letter-Z">Z</a>
+</div>
+
+<!-- ═══════════════════════ TERMS ═══════════════════════ -->
+
+<div style="padding: 0 6% 80px; max-width: 900px; margin: 0 auto;">
+
+    <!-- B -->
+    <div id="letter-B" class="glossary-section">
+        <div class="section-label" style="margin-bottom: 28px;">B</div>
+        <div class="glossary-term">
+            <h3>Baseline Grid</h3>
+            <p>An invisible horizontal grid that all text sits on, creating consistent vertical rhythm across a page. Setting a baseline (e.g. 8px) and sizing all spacing to multiples of it makes layouts feel ordered even when they look complex.</p>
+        </div>
+        <div class="glossary-term">
+            <h3>Bleed</h3>
+            <p>An element that extends to or beyond the edge of its container — most commonly a full-width background image or color block. On the web, a section with no horizontal margin that spans 100vw is described as bleeding to the edges.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- C -->
+    <div id="letter-C" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">C</div>
+        <div class="glossary-term">
+            <h3>Cascade (CSS)</h3>
+            <p>The algorithm that determines which CSS rules apply to an element when multiple rules conflict. It weighs specificity, source order, and importance. Understanding the cascade prevents the common fix of adding <code>!important</code> to everything.</p>
+        </div>
+        <div class="glossary-term">
+            <h3>Contrast Ratio</h3>
+            <p>A numeric measure of the luminance difference between foreground and background colors, expressed as a ratio (e.g. 4.5:1). WCAG AA requires 4.5:1 for normal text and 3:1 for large text or UI components. Measured using tools like the WebAIM Contrast Checker.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- D -->
+    <div id="letter-D" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">D</div>
+        <div class="glossary-term">
+            <h3>Design Token</h3>
+            <p>A named variable that stores a design decision — a color, spacing value, font size, or radius — making it reusable across a system. In CSS, design tokens are implemented as custom properties (e.g. <code>--color-accent: #4f46e5</code>). Changing the token updates every instance.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- E -->
+    <div id="letter-E" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">E</div>
+        <div class="glossary-term">
+            <h3>Easing Curve</h3>
+            <p>A function that describes how a CSS animation progresses over time. <code>ease-in</code> starts slow and accelerates; <code>ease-out</code> starts fast and decelerates; <code>ease-in-out</code> does both. Custom curves are defined with <code>cubic-bezier()</code>. Linear motion — no easing — looks mechanical and should be avoided for most UI transitions.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- F -->
+    <div id="letter-F" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">F</div>
+        <div class="glossary-term">
+            <h3>F-Pattern</h3>
+            <p>A reading pattern observed in eye-tracking studies where users scan content in an F-shape: a horizontal sweep across the top, a shorter sweep below, then a vertical scan down the left edge. Content-heavy pages (articles, feeds) see strong F-pattern behavior. Place your most critical information along these axes.</p>
+        </div>
+        <div class="glossary-term">
+            <h3>Fluid Typography</h3>
+            <p>Type that scales smoothly between a minimum and maximum size based on viewport width, implemented with CSS <code>clamp(min, preferred, max)</code>. Eliminates the need for separate font-size declarations at multiple breakpoints.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- G -->
+    <div id="letter-G" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">G</div>
+        <div class="glossary-term">
+            <h3>Golden Ratio</h3>
+            <p>A mathematical proportion (~1.618:1) found in nature and art, sometimes used to generate type scales or layout proportions. Its practical value in web design is modest — the principle matters more than the number. Use it as a starting point, not a rule.</p>
+        </div>
+        <div class="glossary-term">
+            <h3>Grid System</h3>
+            <p>A set of invisible horizontal and vertical lines that structure a layout. On the web, implemented with CSS Grid or a utility framework. A grid creates consistency across pages and components, making designs feel considered rather than assembled by hand.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- H -->
+    <div id="letter-H" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">H</div>
+        <div class="glossary-term">
+            <h3>Hierarchy (Visual)</h3>
+            <p>The arrangement of elements to communicate their relative importance. Size, weight, color, and position all contribute to hierarchy. A strong visual hierarchy means a visitor always knows what to look at next — the page is not a list, it is a sequence.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- K -->
+    <div id="letter-K" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">K</div>
+        <div class="glossary-term">
+            <h3>Kerning</h3>
+            <p>The adjustment of space between specific pairs of letters. Fonts include kerning tables that handle common pairs (AV, Te, Wa) automatically. Web designers occasionally apply manual kerning via <code>letter-spacing</code> — most often for headlines or logotypes where optical consistency matters more than measured consistency.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- L -->
+    <div id="letter-L" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">L</div>
+        <div class="glossary-term">
+            <h3>Leading</h3>
+            <p>The vertical space between lines of text — in CSS, <code>line-height</code>. The term comes from the strips of lead type setters placed between rows of metal type. A comfortable body text leading is 1.5–1.7× the font size. Headlines can go tighter: 0.9–1.1×.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- M -->
+    <div id="letter-M" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">M</div>
+        <div class="glossary-term">
+            <h3>Modular Scale</h3>
+            <p>A type scale built by multiplying a base size by a consistent ratio. Common ratios: Major Second (1.125×), Major Third (1.25×), Perfect Fourth (1.333×), Golden (1.618×). A modular scale creates visual harmony between text sizes without trial and error.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- N -->
+    <div id="letter-N" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">N</div>
+        <div class="glossary-term">
+            <h3>Negative Space</h3>
+            <p>The empty area around and between elements in a composition. Negative space is not nothing — it gives subjects room to breathe, prevents visual noise, and can itself create shapes and meaning. Generous negative space is one of the clearest signals of premium design intent.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- O -->
+    <div id="letter-O" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">O</div>
+        <div class="glossary-term">
+            <h3>Optical Alignment</h3>
+            <p>Adjusting the position of elements so they appear visually centered, even when they are not mathematically centered. Circular icons often need to be shifted slightly from true center to appear balanced. Optical alignment trusts the eye over the ruler.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- P -->
+    <div id="letter-P" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">P</div>
+        <div class="glossary-term">
+            <h3>Proximity (Gestalt)</h3>
+            <p>The Gestalt principle that elements placed close together are perceived as a group. On the web, this means a label and its value should be closer to each other than to the next label-value pair. Proximity creates grouping without borders, backgrounds, or explicit visual containers.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- R -->
+    <div id="letter-R" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">R</div>
+        <div class="glossary-term">
+            <h3>Rhythm (Visual)</h3>
+            <p>The repetition of visual elements — spacing, size, color, shape — that creates a sense of pattern and movement. Good rhythm makes a page feel intentional and composed. Bad rhythm feels random. Consistent spacing tokens and a type scale are the primary tools for creating rhythm on the web.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- S -->
+    <div id="letter-S" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">S</div>
+        <div class="glossary-term">
+            <h3>Safe Area</h3>
+            <p>The region of a screen guaranteed to be visible and unobstructed — especially relevant on mobile devices where notches, home indicators, and rounded corners can clip content. On the web, use CSS <code>env(safe-area-inset-*)</code> with <code>viewport-fit=cover</code> to respect device safe areas.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- T -->
+    <div id="letter-T" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">T</div>
+        <div class="glossary-term">
+            <h3>Tracking</h3>
+            <p>The uniform spacing applied across a range of characters — in CSS, <code>letter-spacing</code>. Unlike kerning (which adjusts specific pairs), tracking adjusts the density of all letters equally. Uppercase text and small labels typically benefit from positive tracking (0.05–0.15em) to improve readability at small sizes.</p>
+        </div>
+        <div class="glossary-term">
+            <h3>Type Scale</h3>
+            <p>A defined set of font sizes used consistently across a design system. Typically 6–8 steps — from display/hero sizes down to captions and labels. A type scale prevents arbitrary font sizes and ensures visual consistency across all components and pages.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- V -->
+    <div id="letter-V" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">V</div>
+        <div class="glossary-term">
+            <h3>Variable Font</h3>
+            <p>A single font file containing an entire type family, with axes like weight, width, and slant that can be adjusted continuously in CSS using <code>font-variation-settings</code>. Variable fonts replace multiple static files with one, and enable smooth animated type transitions that were previously impossible.</p>
+        </div>
+        <div class="glossary-term">
+            <h3>Visual Weight</h3>
+            <p>The perceived heaviness of an element in a composition, determined by size, color intensity, contrast, and detail. Darker, larger, and more saturated elements carry more visual weight. Balancing visual weight across a layout creates stability; imbalancing it deliberately creates tension and movement.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- W -->
+    <div id="letter-W" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">W</div>
+        <div class="glossary-term">
+            <h3>Whitespace</h3>
+            <p>The empty space between and around design elements — also called negative space or breathing room. Whitespace does not need to be white; it refers to any unoccupied area. Generous whitespace signals confidence, premium positioning, and clarity of purpose. The best designs have more whitespace than anything else.</p>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Z -->
+    <div id="letter-Z" class="glossary-section" style="margin-top: 60px;">
+        <div class="section-label" style="margin-bottom: 28px;">Z</div>
+        <div class="glossary-term">
+            <h3>Z-Pattern</h3>
+            <p>A reading pattern common on landing pages and marketing sites where visitors scan in a Z-shape: top-left → top-right → diagonal to bottom-left → bottom-right. This path naturally aligns with the typical placement of logos (top-left), navigation (top-right), hero content (middle), and call-to-action buttons (bottom-right).</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════════════════ CTA ═══════════════════════ -->
+
+<div class="why-cta">
+    <h2>See the principles in practice.</h2>
+    <p>Every term in this glossary connects to one of the five principles. Ready to go deeper?</p>
+    <a href="/principles.html" class="btn-cta">Read the Five Principles <span>Typography, color, layout, whitespace, motion</span></a>
+</div>
+
+</main>
+
+<div id="site-footer" data-variant="full"></div>
+
+</body>
+</html>
